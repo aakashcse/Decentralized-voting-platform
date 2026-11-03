@@ -1,0 +1,22 @@
+{
+  "name": "blockballot-contracts",
+  "version": "1.0.0",
+  "description": "BlockBallot smart contracts",
+  "scripts": {
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "node": "hardhat node",
+    "deploy:local": "hardhat run scripts/deploy.ts --network localhost",
+    "deploy:arbitrum-sepolia": "hardhat run scripts/deploy.ts --network arbitrumSepolia",
+    "verify": "hardhat verify --network arbitrumSepolia"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "@types/node": "^26.6.6",
+    "dotenv": "^18.0.9",
+    "hardhat": "^2.29.1",
+    "ts-node": "^10.9.2",
+    "typescript": "~5.6"
+  }
+}

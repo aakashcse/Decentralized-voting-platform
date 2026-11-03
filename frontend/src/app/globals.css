@@ -1,0 +1,114 @@
+:root {
+  --bg: #0b1020;
+  --surface: #131a2e;
+  --surface-2: #1a2340;
+  --border: #26304f;
+  --text: #e8ecf6;
+  --muted: #8e98b5;
+  --accent: #2ec4a6;
+  --accent-ink: #062a23;
+  --blue: #5b8cff;
+  --amber: #f2b84b;
+  --red: #ff6b6b;
+  --radius: 14px;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--bg); color: var(--text); }
+a { color: inherit; }
+code { background: var(--surface-2); padding: 1px 6px; border-radius: 6px; font-size: 0.9em; }
+h1 { font-size: 1.9rem; margin: 0; letter-spacing: -0.02em; }
+h2 { font-size: 1.2rem; margin: 0; }
+h3 { font-size: 1rem; margin: 8px 0 0; }
+
+.container { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
+.main { padding-top: 32px; padding-bottom: 48px; min-height: calc(100vh - 140px); }
+.footer { color: var(--muted); font-size: 0.85rem; padding-bottom: 32px; }
+.muted { color: var(--muted); }
+.small { font-size: 0.85rem; }
+.link { color: var(--accent); text-decoration: none; }
+.link:hover { text-decoration: underline; }
+.stack { display: flex; flex-direction: column; gap: 16px; }
+.row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+.grow { flex: 1 1 200px; }
+
+/* nav */
+.nav { border-bottom: 1px solid var(--border); background: rgba(11, 16, 32, 0.9); position: sticky; top: 0; backdrop-filter: blur(8px); z-index: 10; }
+.nav-inner { display: flex; align-items: center; gap: 24px; height: 64px; }
+.brand { font-weight: 700; text-decoration: none; display: flex; gap: 8px; align-items: center; font-size: 1.1rem; }
+.brand-mark { color: var(--accent); }
+.nav-links { display: flex; gap: 18px; flex: 1; }
+.nav-links a { text-decoration: none; color: var(--muted); }
+.nav-links a.active, .nav-links a:hover { color: var(--text); }
+.dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+
+/* buttons */
+.btn { border: 1px solid transparent; border-radius: 10px; padding: 10px 16px; font: inherit; font-weight: 600; cursor: pointer; text-decoration: none; display: inline-flex; gap: 8px; align-items: center; justify-content: center; }
+.btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.btn-primary { background: var(--accent); color: var(--accent-ink); }
+.btn-primary:not(:disabled):hover { filter: brightness(1.08); }
+.btn-ghost { background: transparent; border-color: var(--border); color: var(--text); }
+.btn-ghost:hover { background: var(--surface-2); }
+.btn-sm { padding: 6px 10px; font-size: 0.85rem; }
+
+/* hero */
+.hero { padding: 24px 0 32px; max-width: 680px; display: flex; flex-direction: column; gap: 12px; }
+.hero h1 { font-size: 2.6rem; }
+.hero p { color: var(--muted); font-size: 1.1rem; line-height: 1.6; margin: 0; }
+
+/* cards */
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; }
+.card-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; margin-top: 16px; }
+.election-card { display: flex; flex-direction: column; gap: 10px; overflow: hidden; }
+.election-card p { margin: 0; }
+.banner { width: calc(100% + 40px); margin: -20px -20px 4px; height: 120px; object-fit: cover; }
+
+.badge { font-size: 0.75rem; font-weight: 700; padding: 4px 10px; border-radius: 999px; margin-left: 8px; text-transform: uppercase; letter-spacing: 0.04em; }
+.badge-upcoming { background: rgba(91, 140, 255, 0.15); color: var(--blue); }
+.badge-active { background: rgba(46, 196, 166, 0.15); color: var(--accent); }
+.badge-ended { background: rgba(142, 152, 181, 0.15); color: var(--muted); }
+
+.notice { border-radius: 10px; padding: 12px 14px; border: 1px solid var(--border); background: var(--surface-2); line-height: 1.5; }
+.notice ul { margin: 0; padding-left: 18px; }
+.notice a { color: var(--accent); }
+.notice-error { border-color: rgba(255, 107, 107, 0.4); background: rgba(255, 107, 107, 0.08); }
+.notice-success { border-color: rgba(46, 196, 166, 0.4); background: rgba(46, 196, 166, 0.08); }
+
+/* ballot */
+.candidates { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; }
+.candidate { display: flex; gap: 14px; text-align: left; color: var(--text); font: inherit; cursor: pointer; align-items: flex-start; transition: border-color 0.15s, transform 0.15s; }
+.candidate:not(:disabled):hover { border-color: var(--accent); transform: translateY(-1px); }
+.candidate:disabled { cursor: default; }
+.candidate.selected { border-color: var(--accent); box-shadow: 0 0 0 2px rgba(46, 196, 166, 0.35); }
+.candidate-body { display: flex; flex-direction: column; gap: 4px; }
+.avatar { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
+.avatar-fallback { display: inline-flex; align-items: center; justify-content: center; background: var(--surface-2); color: var(--accent); font-weight: 700; font-size: 1.2rem; }
+
+/* results */
+.stats { display: grid; grid-template-columns: 1fr 1fr 2fr; gap: 12px; }
+.stat { display: flex; flex-direction: column; gap: 6px; }
+.stat strong { font-size: 1.5rem; }
+.results { display: flex; flex-direction: column; gap: 18px; }
+.result-label { display: flex; justify-content: space-between; margin-bottom: 6px; }
+.bar { height: 12px; background: var(--surface-2); border-radius: 999px; overflow: hidden; }
+.bar-fill { height: 100%; background: var(--blue); border-radius: 999px; transition: width 0.6s ease; }
+.bar-fill.lead { background: var(--accent); }
+.crown { color: var(--amber); }
+
+/* forms */
+.form { display: flex; flex-direction: column; gap: 14px; }
+.form.narrow { max-width: 440px; margin: 0 auto; }
+label { display: flex; flex-direction: column; gap: 6px; font-weight: 600; font-size: 0.9rem; }
+input, textarea { background: var(--bg); border: 1px solid var(--border); color: var(--text); border-radius: 10px; padding: 10px 12px; font: inherit; font-weight: 400; }
+input:focus, textarea:focus { outline: 2px solid rgba(46, 196, 166, 0.5); border-color: var(--accent); }
+.candidate-input { border: 1px dashed var(--border); border-radius: 10px; padding: 12px; display: flex; flex-direction: column; gap: 8px; }
+.candidate-input legend { color: var(--muted); font-size: 0.85rem; padding: 0 6px; }
+
+@media (max-width: 720px) {
+  .nav-links { display: none; }
+  .stats { grid-template-columns: 1fr 1fr; }
+  .stat-wide { grid-column: span 2; }
+  .hero h1 { font-size: 2rem; }
+}
