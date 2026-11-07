@@ -5,7 +5,7 @@ import Navbar from "@/components/Navbar";
 import { config } from "@/lib/config";
 
 export const metadata: Metadata = {
-  title: "BlockBallot | Blockchain voting",
+  title: "Decentralized-voting-platform",
   description: "Tamper-proof online voting on Arbitrum. Every vote is an on-chain transaction anyone can audit.",
 };
 

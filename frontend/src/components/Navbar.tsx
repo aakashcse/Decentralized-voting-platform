@@ -22,7 +22,7 @@ export default function Navbar() {
           <span className="brand-mark" aria-hidden>
             ▣
           </span>
-          BlockBallot
+          Decentralized-voting-platform
         </Link>
         <nav className="nav-links">
           {links.map((l) => (

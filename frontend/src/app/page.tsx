@@ -34,7 +34,7 @@ export default function HomePage() {
       <section className="hero">
         <h1>Votes nobody can change.</h1>
         <p>
-          Every ballot on BlockBallot is a transaction on Arbitrum. Once it&apos;s cast it can&apos;t be edited or
+          Every ballot on Decentralized-voting-platform is a transaction on Arbitrum. Once it&apos;s cast it can&apos;t be edited or
           deleted, not even by the admin, and anyone can audit the count on-chain.
         </p>
         {isContractConfigured && (

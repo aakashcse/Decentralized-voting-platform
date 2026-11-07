@@ -1,4 +1,4 @@
--- BlockBallot: off-chain data in Supabase.
+-- Decentralized-voting-platform: off-chain data in Supabase.
 -- Votes and vote counts are NEVER stored here. They live only in the smart contract.
 -- Run this in the Supabase SQL editor.
 

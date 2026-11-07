@@ -1,7 +1,7 @@
 {
-  "name": "blockballot-contracts",
+  "name": "decentralized-voting-platform-contracts",
   "version": "1.0.0",
-  "description": "BlockBallot smart contracts",
+  "description": "Decentralized-voting-platform smart contracts",
   "scripts": {
     "compile": "hardhat compile",
     "test": "hardhat test",
