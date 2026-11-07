@@ -4,18 +4,18 @@ import * as path from "path";
 
 async function main() {
   const [deployer] = await ethers.getSigners();
-  console.log(`Deploying BlockBallot to ${network.name} from ${deployer.address}`);
+  console.log(`Deploying DecentralizedVotingPlatform to ${network.name} from ${deployer.address}`);
 
-  const factory = await ethers.getContractFactory("BlockBallot");
+  const factory = await ethers.getContractFactory("DecentralizedVotingPlatform");
   const contract = await factory.deploy();
   await contract.waitForDeployment();
 
   const address = await contract.getAddress();
-  console.log(`BlockBallot deployed at ${address}`);
+  console.log(`DecentralizedVotingPlatform deployed at ${address}`);
 
   // Copy the ABI to the frontend so it always matches the deployed contract.
-  const artifact = await import("../artifacts/contracts/BlockBallot.sol/BlockBallot.json");
-  const outFile = path.join(__dirname, "..", "..", "frontend", "src", "lib", "abi", "BlockBallot.json");
+  const artifact = await import("../artifacts/contracts/DecentralizedVotingPlatform.sol/DecentralizedVotingPlatform.json");
+  const outFile = path.join(__dirname, "..", "..", "frontend", "src", "lib", "abi", "DecentralizedVotingPlatform.json");
   fs.mkdirSync(path.dirname(outFile), { recursive: true });
   fs.writeFileSync(outFile, JSON.stringify({ abi: artifact.abi }, null, 2));
   console.log(`ABI written to ${outFile}`);

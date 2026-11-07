@@ -1,12 +1,12 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.27;
 
-/// @title BlockBallot
+/// @title Decentralized-voting-platform
 /// @notice On-chain voting. Elections, candidates and vote counts live here.
 ///         Once a vote is cast it can never be changed or deleted, not even by the admin.
 ///         Off-chain metadata (descriptions, candidate photos, bios) lives in Supabase and
 ///         is linked through the election id and candidate index.
-contract BlockBallot {
+contract DecentralizedVotingPlatform {
     struct Candidate {
         string name;
         uint256 voteCount;

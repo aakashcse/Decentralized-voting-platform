@@ -31,16 +31,16 @@ The smart contract runs on **Arbitrum Sepolia** (an Ethereum Layer-2 testnet), t
 ## Architecture
 
 ```
-┌──────────────┐   read counts (RPC)    ┌───────────────────────────┐
-│  Next.js app │ ─────────────────────▶ │ BlockBallot.sol           │
-│  (browser)   │   vote / create tx     │ on Arbitrum Sepolia       │
-│              │ ──── via MetaMask ───▶ │ candidates, votes, counts │
-│              │                        └───────────────────────────┘
-│              │   accounts, profiles   ┌───────────────────────────┐
-│              │ ─────────────────────▶ │ Supabase (Postgres+Auth)  │
-└──────────────┘                        │ elections, candidates,    │
-                                        │ profiles (no votes)       │
-                                        └───────────────────────────┘
+┌──────────────┐   read counts (RPC)    ┌─────────────────────────────────┐
+│  Next.js app │ ─────────────────────▶ │ DecentralizedVotingPlatform.sol │
+│  (browser)   │   vote / create tx     │ on Arbitrum Sepolia             │
+│              │ ──── via MetaMask ───▶ │ candidates, votes, counts       │
+│              │                        └─────────────────────────────────┘
+│              │   accounts, profiles   ┌─────────────────────────────────┐
+│              │ ─────────────────────▶ │ Supabase (Postgres+Auth)        │
+└──────────────┘                        │ elections, candidates,          │
+                                        │ profiles (no votes)             │
+                                        └─────────────────────────────────┘
 ```
 
 The election id and candidate index link both sides: `elections.id` in Supabase equals the on-chain election id, and `candidates.chain_index` equals the candidate's position in the contract.
@@ -49,9 +49,9 @@ The election id and candidate index link both sides: `elections.id` in Supabase 
 
 ```
 contracts/            Hardhat project
-  contracts/BlockBallot.sol
+  contracts/DecentralizedVotingPlatform.sol
   scripts/deploy.ts   deploys and copies the ABI into the frontend
-  test/BlockBallot.test.ts
+  test/DecentralizedVotingPlatform.test.ts
 frontend/             Next.js app
   src/app/            pages: /, /elections/[id], /elections/[id]/results, /admin, /login
   src/components/     wallet context, navbar, badges
@@ -79,7 +79,7 @@ cp .env.example .env          # add PRIVATE_KEY of a test wallet (never a real o
 npm run deploy:arbitrum-sepolia
 ```
 
-The deploy script prints the contract address and writes the ABI to `frontend/src/lib/abi/BlockBallot.json`. The wallet that deploys becomes the admin.
+The deploy script prints the contract address and writes the ABI to `frontend/src/lib/abi/DecentralizedVotingPlatform.json`. The wallet that deploys becomes the admin.
 
 Optionally verify the source on Arbiscan:
 

@@ -1,5 +1,5 @@
 import { BrowserProvider, Contract, JsonRpcProvider, type Eip1193Provider, type JsonRpcSigner } from "ethers";
-import abiJson from "./abi/BlockBallot.json";
+import abiJson from "./abi/DecentralizedVotingPlatform.json";
 import { config } from "./config";
 
 export const abi = abiJson.abi;

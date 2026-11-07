@@ -2,10 +2,10 @@ import { expect } from "chai";
 import { ethers } from "hardhat";
 import { time, loadFixture } from "@nomicfoundation/hardhat-toolbox/network-helpers";
 
-describe("BlockBallot", () => {
+describe("DecentralizedVotingPlatform", () => {
   async function deployFixture() {
     const [admin, alice, bob, carol] = await ethers.getSigners();
-    const contract = await (await ethers.getContractFactory("BlockBallot")).deploy();
+    const contract = await (await ethers.getContractFactory("DecentralizedVotingPlatform")).deploy();
     const now = await time.latest();
     const start = now + 60;
     const end = now + 3600;
