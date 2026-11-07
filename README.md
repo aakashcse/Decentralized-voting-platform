@@ -1,4 +1,4 @@
-# BlockBallot: Blockchain-Based Voting Platform
+# Decentralized-voting-platform 
 
 BlockBallot is an online voting system where every vote is stored on a blockchain. Once a vote is cast, nobody can change or delete it, not even the admin, and anyone can check the results on-chain.
 
